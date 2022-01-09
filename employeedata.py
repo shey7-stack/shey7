@@ -41,16 +41,18 @@ def Csv_file():
     
     text = ''.join([i for i in text]) \
     .replace(string_replace, new_string)
-    
+    # Takes filename from user to save changes to
     save_as = input("Enter filename to save changes to: ")
     x = open(save_as,"w")                   # opens a new file to save changes to
     x.writelines(text)                      # write changes to the new file
     x.close()
     
-class main():
+class main:
+# Checks type of input and call the correspinding function
     file_type = input("Enter file type - csv or excel:  ")
     if file_type=="excel":
         Excel_file()
     elif file_type == "csv":
         Csv_file()
+# Run again after exit
 main()
